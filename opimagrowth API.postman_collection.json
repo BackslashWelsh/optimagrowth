@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "d71af88d-215b-41f8-8a15-f2c352699f6f",
+		"name": "opimagrowth API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18394903"
+	},
+	"item": [
+		{
+			"name": "gateway",
+			"item": [
+				{
+					"name": "gateway/actuator/routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}8072/actuator/gateway/routes",
+							"host": [
+								"{{baseUrl}}8072"
+							],
+							"path": [
+								"actuator",
+								"gateway",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gateway licenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}8072/license/v1/organization/{{organizationId}}/license",
+							"host": [
+								"{{baseUrl}}8072"
+							],
+							"path": [
+								"license",
+								"v1",
+								"organization",
+								"{{organizationId}}",
+								"license"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gateway organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}8072/license/v1/organization/{{organizationId}}/license",
+							"host": [
+								"{{baseUrl}}8072"
+							],
+							"path": [
+								"license",
+								"v1",
+								"organization",
+								"{{organizationId}}",
+								"license"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gateway license",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}8072/license/v1/organization/{{organizationId}}/license/{{licenseId}}",
+							"host": [
+								"{{baseUrl}}8072"
+							],
+							"path": [
+								"license",
+								"v1",
+								"organization",
+								"{{organizationId}}",
+								"license",
+								"{{licenseId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "configserver/encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "postgres"
+				},
+				"url": {
+					"raw": "{{baseUrl}}8071/encrypt",
+					"host": [
+						"{{baseUrl}}8071"
+					],
+					"path": [
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "configserver/decrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "6b9bbe24f35c52e30b5160cb2c27c936e37cf0667364e055ad6698cddead1ed3"
+				},
+				"url": {
+					"raw": "{{baseUrl}}8071/decrypt",
+					"host": [
+						"{{baseUrl}}8071"
+					],
+					"path": [
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "license/actuator/refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8080/actuator/refresh",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"actuator",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "license actuator/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8080/actuator/health/",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"actuator",
+						"health",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Organization",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Ostock\",\n\t\"contactName\":\"Illary Huaylupo\",\n\t\"contactEmail\":\"illaryhs@gmail.com\",\n\t\"contactPhone\":\"888888888\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}8081/v1/organization/",
+					"host": [
+						"{{baseUrl}}8081"
+					],
+					"path": [
+						"v1",
+						"organization",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get License",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/{{organizationId}}/license/{{licenseId}}",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"{{organizationId}}",
+						"license",
+						"{{licenseId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete License",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/optimaGrowth/license/af09ea29-4a16-4259-b7d2-cf13d9443390",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"optimaGrowth",
+						"license",
+						"af09ea29-4a16-4259-b7d2-cf13d9443390"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create License",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "es",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"organizationId\":\"e43e57ea-39cf-42bf-a8a5-2126b5a36762\",\n\t\"description\":\"Software product\",\n\t\"productName\":\"Ostock\",\n\t\"licenseType\":\"complete\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/e43e57ea-39cf-42bf-a8a5-2126b5a36762/license",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"e43e57ea-39cf-42bf-a8a5-2126b5a36762",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update License",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"licenseId\":\"af09ea29-4a16-4259-b7d2-cf13d9443390\",\n\t\"organizationId\":\"optimaGrowth\",\n\t\"description\":\"Software development product\",\n\t\"productName\":\"Ostock-lic\",\n\t\"licenseType\":\"partial\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/e43e57ea-39cf-42bf-a8a5-2126b5a36762/license",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"e43e57ea-39cf-42bf-a8a5-2126b5a36762",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eureka Organization REST API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}8070/eureka/apps/organization-service",
+					"host": [
+						"{{baseUrl}}8070"
+					],
+					"path": [
+						"eureka",
+						"apps",
+						"organization-service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Organization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8081/v1/organization/{{organizationId}}",
+					"host": [
+						"{{baseUrl}}8081"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"{{organizationId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get License with Discovery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/{{organizationId}}/license/{{licenseId}}/discovery",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"{{organizationId}}",
+						"license",
+						"{{licenseId}}",
+						"discovery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Licenses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "tmx-correlation-id",
+						"value": "TEST-CORRELATION-ID",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/{{organizationId}}/license",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"{{organizationId}}",
+						"license"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get License with RestTemplate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/{{organizationId}}/license/{{licenseId}}/rest",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"{{organizationId}}",
+						"license",
+						"{{licenseId}}",
+						"rest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get License with Netflix feign",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}8080/v1/organization/{{organizationId}}/license/{{licenseId}}/feign",
+					"host": [
+						"{{baseUrl}}8080"
+					],
+					"path": [
+						"v1",
+						"organization",
+						"{{organizationId}}",
+						"license",
+						"{{licenseId}}",
+						"feign"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
