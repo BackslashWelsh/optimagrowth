@@ -1,0 +1,16 @@
+spring:
+  application.name: config-server
+  profiles:
+    active: git
+
+spring.cloud.config.server:
+#  native.searchLocations: classpath:/config
+  git:
+    uri: https://github.com/BackslashWelsh/optimagrowth-server-configuraton.git
+    searchPaths: licensing-service
+
+server.port: 8071
+
+management.endpoints.web.exposure.include: "*"
+
+encrypt.key: ${CONFIG_SERVER_ENCRYPT_KEY}
